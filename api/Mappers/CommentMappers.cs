@@ -17,6 +17,7 @@ namespace api.Mappers
             Title = commentModel.Title,
             Content = commentModel.Content,
             CreatedOn = commentModel.CreatedOn,
+            CreatedBy = commentModel.AppUser.UserName,
             StockId = commentModel.StockId
           };
         }
@@ -31,7 +32,7 @@ namespace api.Mappers
           };
         }
 
-         public static Comment toCommentFromUpdate(this UpdateCommentRequestDto commentDto)
+        public static Comment toCommentFromUpdate(this UpdateCommentRequestDto commentDto)
         {
           return new Comment
           {
